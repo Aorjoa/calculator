@@ -1,12 +1,23 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Review calculator</title>
-</head>
-<body>
-<form action="{{.Title}}" method="POST">
-<div>
-<inut type= name="body" rows="20" cols="80">{{printf "%s" .Body}}</textarea></div>
-<div><input type="submit" value="Save"></div>
-</form>
-</body>
+    <head>
+        <title>Calculator</title>
+        <link href="css/flat-ui.css" rel="stylesheet">
+        <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <input id="firstInput" type="text"/>
+        <select>
+            <option value='PLUS'>+</option>
+            <option value='MINUS'>-</option>
+            <option value='MULTIPLY'>*</option>
+            <option value='DIVIDE'>/</option>
+        </select>
+        <input id="secondInput" type="text"/>
+        <input id="btnCalculate" type="submit" value="="/>
+    </body>
+    <script type="text/javascript" src="js/jquery.min.js" defer></script>
+    <script type="text/javascript" src="js/flat-ui.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+    <script type="text/javascript" src="js/testcases.js" defer></script>
 </html>
