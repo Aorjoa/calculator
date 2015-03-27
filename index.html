@@ -4,17 +4,37 @@
         <title>Calculator</title>
         <link href="css/flat-ui.css" rel="stylesheet">
         <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            .mainBox{
+                width: 500px;
+                margin: 100px auto;
+            }
+            .calBox{
+                display: inline-block;
+                width: 100px;
+            }
+        </style>
     </head>
     <body>
-        <input id="firstInput" type="text"/>
-        <select>
-            <option value='PLUS'>+</option>
-            <option value='MINUS'>-</option>
-            <option value='MULTIPLY'>*</option>
-            <option value='DIVIDE'>/</option>
-        </select>
-        <input id="secondInput" type="text"/>
-        <input id="btnCalculate" type="submit" value="="/>
+        <div class="mainBox">
+            <div>
+                <h2>Calculator O_o!</h2>    
+            </div>
+            <div class="form-group has-success">
+                <input id="firstInput" type="text" class="form-control calBox">
+                <select>
+                    <option value='PLUS'>+</option>
+                    <option value='MINUS'>-</option>
+                    <option value='MULTIPLY'>*</option>
+                    <option value='DIVIDE'>/</option>
+                </select>
+                <input id="secondInput" type="text" class="form-control calBox"/>
+                <a id="btnCalculate" class="btn btn-block btn-lg btn-danger calBox">=</a>
+            </div>
+            <div id="showResult">
+            
+            </div>
+        </div>
     </body>
     <script type="text/javascript" src="js/jquery.min.js" defer></script>
     <script type="text/javascript" src="js/flat-ui.js" defer></script>

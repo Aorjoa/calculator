@@ -1,21 +1,24 @@
 $(document).ready(function(){
     $("#btnCalculate").on("click",function(){
-        doCalculate($("#firstInput").val(),$("#secondInput").val());
+        var resultForShow = doCalculate($("#firstInput").val(),$("select").find(":selected").val(),$("#secondInput").val());
+        if(resultForShow){
+            $("#showResult").html('<h3><span class="fui-info-circle"></span> Result = '+ resultForShow +'</h3>')
+        }else{
+            $("#showResult").html('<h3><span class="fui-cross"></span> Input error!, please check your input.</h3>')
+        }
     });
 }); 
 
     function doCalculate(firstInput,operator,secondInput){
-        if(validateInput(this.firstInput,this.secondInput)){
-            console.log(this.firstInput);
-            doOperator(this.firstInput,operator,this.secondInput);
-            return true;
+        if(validateInput(firstInput,secondInput)){
+            return doOperator(firstInput,operator,secondInput);
         }
         return false;
     }
     function validateInput(firstInput,secondInput){
-        var firstInputParsed = parseFloat(this.firstInput);
-        var secondInputParsed = parseFloat(this.firstInput);
-        if(isNaN(firstInputParsed)||isNaN(firstInputParsed)||!isFinite(this.firstInput)||!isFinite(this.secondInput)){
+        var firstInputParsed = parseFloat(firstInput);
+        var secondInputParsed = parseFloat(firstInput);
+        if(isNaN(firstInputParsed)||isNaN(firstInputParsed)||!isFinite(firstInput)||!isFinite(secondInput)){
             return false;
         }
         return true;
@@ -24,30 +27,29 @@ $(document).ready(function(){
         var output;
         switch (operator){
             case "PLUS" :
-                output = plus(this.firstInput,this.secondInput);
+                output = plus(firstInput,secondInput);
                 break;
             case "MINUS" :
-                output = minus(this.firstInput,this.secondInput);
+                output = minus(firstInput,secondInput);
                 break;
             case "MULTIPLY" :
-                output = multiply(this.firstInput,this.secondInput);
+                output = multiply(firstInput,secondInput);
                 break;
             case "DIVIDE" :
-                output = divide(this.firstInput,this.secondInput);
+                output = divide(firstInput,secondInput);
                 break;
         }
         return output;
     }
     function plus(firstInput,secondInput){
-        console.log(">>>> "+ firstInput+secondInput)
-        return this.firstInput+this.secondInput;
+        return (parseFloat(firstInput)+parseFloat(secondInput));
     }
     function minus(firstInput,secondInput){
-
+        return (parseFloat(firstInput)-parseFloat(secondInput));
     }
     function multiply(firstInput,secondInput){
-
+        return (parseFloat(firstInput)*parseFloat(secondInput));
     }
     function divide(firstInput,secondInput){
-
+        return (parseFloat(firstInput)/parseFloat(secondInput));
     }

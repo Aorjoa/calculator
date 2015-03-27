@@ -43,17 +43,40 @@ if(!doCalculate("2n","PLUS","2")){
 
 //Case#5
 var desc = "Case 5 : If give number as input process will be calculate";
-if(doCalculate("50","PLUS","2")){
+if(doCalculate("50","PLUS","2") == 52){
     console.log(desc+ " : PASS");
 }else{
     console.log(desc+ " : FAIL!");
 }
 
 //Case#6
-var desc = "Case 5 : 2+5 = 7";
-if(doCalculate("2","PLUS","5")){
+var desc = "Case 6 : 2+5 = 7";
+if(doCalculate("2","PLUS","5") == 7){
     console.log(desc+ " : PASS");
 }else{
     console.log(desc+ " : FAIL!");
 }
 
+//Case#7
+var desc = "Case 7 : 9-5 = 4";
+if(doCalculate("9","MINUS","5") == 4){
+    console.log(desc+ " : PASS");
+}else{
+    console.log(desc+ " : FAIL!");
+}
+
+//Case#8
+var desc = "Case 8 : 9.2*2.2 = 20.24";
+if(doCalculate("9.2","MULTIPLY","2.2") == 20.24){
+    console.log(desc+ " : PASS");
+}else{
+    console.log(desc+ " : FAIL!");
+}
+
+//Case#9
+var desc = "Case 9 : 120/24 = 5";
+if(doCalculate("120","DIVIDE","24") == 5){
+    console.log(desc+ " : PASS");
+}else{
+    console.log(desc+ " : FAIL!");
+}
